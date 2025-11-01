@@ -4,29 +4,41 @@
     <link rel="stylesheet" href="./style/css/styles.css" />
     <style>
       body {
-        overflow: hidden; /* عشان الزرار ما يخرجش برا الشاشة */
-      }
-      .container {
-        text-align: center;
-        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 100vh;
       }
 
+      .container {
+        text-align: center;
+      }
+
+      .buttons {
+        position: relative;
+        margin-top: 20px;
+        height: 150px; /* مساحة كفاية يتحرك فيها الزرار */
+      }
+
       .btn {
-        position: absolute;
         padding: 10px 20px;
         font-size: 18px;
         cursor: pointer;
+        position: absolute;
+        transition: all 0.2s ease; /* حركة ناعمة */
       }
 
       #yesButton {
         left: 40%;
-        top: 60%;
+        top: 50%;
+        transform: translate(-50%, -50%);
       }
 
       #noButton {
-        left: 55%;
-        top: 60%;
+        left: 60%;
+        top: 50%;
+        transform: translate(-50%, -50%);
       }
     </style>
   </head>
@@ -54,20 +66,17 @@
 
       function moveButton() {
         const button = document.getElementById("noButton");
-        const container = document.querySelector(".container");
+        const container = document.querySelector(".buttons");
 
-        // نجيب عرض وارتفاع الكونتينر
         const containerWidth = container.clientWidth;
         const containerHeight = container.clientHeight;
 
         const buttonWidth = button.offsetWidth;
         const buttonHeight = button.offsetHeight;
 
-        // نحدد مكان عشوائي جديد داخل الشاشة
         const randomX = Math.random() * (containerWidth - buttonWidth);
         const randomY = Math.random() * (containerHeight - buttonHeight);
 
-        // نغير مكان الزرار
         button.style.left = `${randomX}px`;
         button.style.top = `${randomY}px`;
       }
