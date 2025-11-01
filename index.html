@@ -9,43 +9,68 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
+        background-color: #fff5f7;
+        font-family: "Comic Sans MS", sans-serif;
       }
 
       .container {
         text-align: center;
       }
 
+      .header_text {
+        font-size: 28px;
+        color: #ff4d6d;
+        margin-bottom: 20px;
+      }
+
+      .gif_container img {
+        width: 200px;
+      }
+
       .buttons {
         position: relative;
-        margin-top: 20px;
-        height: 150px; /* مساحة كفاية يتحرك فيها الزرار */
+        margin-top: 30px;
+        height: 180px;
       }
 
       .btn {
-        padding: 10px 20px;
-        font-size: 18px;
+        padding: 15px 35px; /* الزرار كبر */
+        font-size: 20px;
         cursor: pointer;
+        border: none;
+        border-radius: 10px;
+        color: white;
         position: absolute;
-        transition: all 0.2s ease; /* حركة ناعمة */
+        transition: all 0.2s ease;
       }
 
       #yesButton {
-        left: 40%;
+        background-color: #28a745;
+        left: 47%; /* قريب من النص */
         top: 50%;
         transform: translate(-50%, -50%);
       }
 
       #noButton {
-        left: 60%;
+        background-color: #dc3545;
+        left: 53%; /* جمب اليسار شوية */
         top: 50%;
         transform: translate(-50%, -50%);
+      }
+
+      #yesButton:hover {
+        background-color: #218838;
+      }
+
+      #noButton:hover {
+        background-color: #c82333;
       }
     </style>
   </head>
   <body>
     <div class="container">
       <div>
-        <h1 class="header_text">Do you wanna go out with me ya maloka !?</h1>
+        <h1 class="header_text">Do you wanna go out with me ya mloka !?</h1>
       </div>
       <div class="gif_container">
         <img
